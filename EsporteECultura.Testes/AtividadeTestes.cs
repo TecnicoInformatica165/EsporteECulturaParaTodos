@@ -1,10 +1,11 @@
 ﻿namespace EsporteECultura.Testes;
 
 [TestClass]
-public sealed class Test1
+public sealed class AtividadeTest1
 {
     [TestMethod]
     public void TestMethod1()
     {
+        
     }
 }

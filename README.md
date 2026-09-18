@@ -6,7 +6,7 @@
 * **Escopo do MV:** Cadastro de pessoas, seleção de modalidade esportiva ou cultural, direcionar os usuários as opções de modalidades disponíveis.
 
 ## 2. Requisitos Funcionais (RF)
-* **RF01:** O site deverá permitir que o usuário realize seu cadastro, com documentos sensíveis.
+* **RF01:** O site deverá permitir que o usuário realize seu cadastro, com dados básicos (nome, contato e data de nascimento para cálculo da faixa etária).
 
 * **RF02:** O sistema deverá disponibilizar recursos que facilitem a navegação por pessoas com diferentes necessidades de acessibilidade.
 
