@@ -1,6 +1,10 @@
 ﻿namespace EsporteECultura.Core;
 
-public class admin
+public class Admin : Usuario
 {
+    public Admin(string nome, string contato, string senhaUsuario) : base(nome, contato, senhaUsuario)
+    {
+        
+    }
     
 }
