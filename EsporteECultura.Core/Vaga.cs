@@ -13,6 +13,7 @@ public class Vaga
 
     public void Inscrever(Usuario usuario)
     {
-        var cliente = new Cliente("Gabriel", "27999999999", "gaga0123", new Endereco("Avenida Talma Rodrigues"));
+        var cliente = new Cliente("Gabriel", "27999999999", "gaga0123", 
+            new Endereco("Avenida Talma Rodrigues"));
     }
 }
