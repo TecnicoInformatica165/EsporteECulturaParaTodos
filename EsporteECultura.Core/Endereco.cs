@@ -1,6 +1,3 @@
-﻿using System.Runtime.CompilerServices;
-using System.Text.RegularExpressions;
-
 namespace EsporteECultura.Core;
 
 public class Endereco
@@ -23,14 +20,6 @@ public class Endereco
         ValidarCEP(CEP);  
         Complemento = complemento;
         ValidarNumero(numero);
-        private void ValidarCEP(string CEP)
-        {
-            if (string.IsNullOrWhiteSpace(CEP))
-                throw new EnderecoException($"CEP não pode ser vazio!");
-
-            CEP = CEP;
-        }
-
     }
 
     private void ValidarLogradouro(string logradouro)
