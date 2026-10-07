@@ -6,6 +6,5 @@ public sealed class AtividadeTest1
     [TestMethod]
     public void TestMethod1()
     {
-        
     }
 }
