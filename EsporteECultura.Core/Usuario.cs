@@ -16,6 +16,16 @@ public class Usuario
         ValidarContato(contato);
     }
 
+    private void ValidarContato(string contato)
+    {
+        if (string.IsNullOrWhiteSpace(contato))
+            throw new UsuarioException($"O telefone de contato não pode estar vazio!");
+        
+        if (Regex.IsMatch(contato, "^(?!\\d{2}9\\d{8}$).*$", RegexOptions.IgnoreCase))
+            throw new UsuarioException($"O número não é válido. Pode faltar DDD.");
+    }
+    
+    
     public const int MINIMO_TAMANHO_NOME = 3;
     public const int MINIMO_TAMANHO_SENHA = 8;
 
@@ -27,7 +37,7 @@ public class Usuario
         if (Regex.IsMatch(email, "^[^@]+$", RegexOptions.IgnoreCase))
             throw new UsuarioException($"O nome de usuário nao tem letras o suficiente.");
         
-   
+        
     }
 
     public int Id { get; private set; }
