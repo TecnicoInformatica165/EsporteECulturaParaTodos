@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace EsporteECultura.Core;
 
@@ -12,38 +13,46 @@ public class Endereco
     public string Bairro { get; private set; }
     public string UF { get; private set; }
 
-    public Endereco(string logradouro, string cidade, string bairro, string UF, string CEP, string complemento,
-        string numero)
+    public Endereco(string logradouro, string cidade, string bairro, string UF, string CEP,
+        string numero, string? complemento)
     {
         ValidarLogradouro(logradouro);
         ValidarCidade(cidade);
         ValidarBairro(bairro);
         ValidarUF(UF);
-        ValidarCEP(CEP);
-        ValidarComplemento(complemento);
-       ValidarNumero(numero);
+        ValidarCEP(CEP);  
+        Complemento = complemento;
+        ValidarNumero(numero);
+        private void ValidarCEP(string CEP)
+        {
+            if (string.IsNullOrWhiteSpace(CEP))
+                throw new EnderecoException($"CEP não pode ser vazio!");
+
+            CEP = CEP;
+        }
+
     }
 
     private void ValidarLogradouro(string logradouro)
     {
         if (string.IsNullOrWhiteSpace(logradouro))
-            throw new Exception();
-
+            throw new EnderecoException($"Lougradouro inválido!");
+        
+        
         Logradouro = logradouro;
     }
     
     private void ValidarCidade(string cidade)
     {
         if (string.IsNullOrWhiteSpace(cidade))
-            throw new Exception();
-
+            throw new EnderecoException($"Cidade não encontrada!");
         Cidade = cidade;
     }
     
     private void ValidarBairro(string bairro)
     {
         if (string.IsNullOrWhiteSpace(bairro))
-            throw new Exception();
+            throw new EnderecoException($"Bairro não encontrada!");
 
         Bairro = bairro;
     }
@@ -51,7 +60,7 @@ public class Endereco
     private void ValidarUF(string UF)
     {
         if (string.IsNullOrWhiteSpace(UF))
-            throw new Exception();
+            throw new EnderecoException($"UF inválido!");
 
         UF = UF;
     }
@@ -59,24 +68,17 @@ public class Endereco
     private void ValidarCEP(string CEP)
     {
         if (string.IsNullOrWhiteSpace(CEP))
-            throw new Exception();
+            throw new EnderecoException($"CEP não pode ser vazio!");
 
         CEP = CEP;
-    }
-    
-    private void ValidarComplemento(string complemento)
-    {
-        if (string.IsNullOrWhiteSpace(complemento))
-            throw new Exception();
-
-        Complemento = complemento;
     }
     
     private void ValidarNumero(string numero)
     {
         if (string.IsNullOrWhiteSpace(numero))
-            throw new Exception();
+            numero = "S/N";
 
-        Numero = numero;
     }
+    
+  
 }
