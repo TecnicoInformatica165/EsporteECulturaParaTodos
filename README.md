@@ -6,9 +6,9 @@
 * **Escopo do MV:** Cadastro de pessoas, seleção de modalidade esportiva ou cultural, direcionar os usuários as opções de modalidades disponíveis.
 
 ## 2. Requisitos Funcionais (RF)
-* **RF01:** O site deverá permitir que o usuário realize seu cadastro, com dados básicos (nome, contato e data de nascimento para cálculo da faixa etária).
+* **RF01:** O site deverá permitir que o usuário realize seu cadastro, com dados básicos (nome, contato, senha, endereço e documentos básicos(CPF e para usuários que são colaboradores o CNPJ) e data de nascimento para cálculo da faixa etária).
 
-* **RF02:** O sistema deverá disponibilizar recursos que facilitem a navegação por pessoas com diferentes necessidades de acessibilidade.
+* **RF02:** O sistema deve solicitar corretamente todas as informações para cada tipo de usuário, para conseguir atender todas as necessidades das atividades. 
 
 * **RF03:** cada atividade deve possuir uma quantidade maxima de participantes definida pelo responsavel do projeto.
 
@@ -17,18 +17,32 @@
 * **RF05:** O sistema deverá permitir que instituições parceiras cadastrem atividades.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 3. Regras de Negocio (RN)
 * **RN01 (Vinculada ao RF01):** O cadastro deve solicitar as informações pessoais necessárias para identificar o usuário e direcionar adequadamente as atividades disponíveis.
 
-* **RN02 (Vinculada ao RF02):** Limitar para que o sistema consiga identificar a faixa etária do usuário encaminhando ele para uma vaga que condiz com as informações.
+* **RN02 (Vinculada ao RF02):** O sistema deve avidar todas as informações fornecidas pelos usuários, garatindo que todas existem e estão corretas.
 
-* **RN03 (Vinculada ao RF03):** O sistema deverá permitir que o usuário filtre as atividades por categoria, faixa etária, localização e disponibilidade de vagas, exibindo apenas as opções que correspondam aos filtros selecionados.
+* **RN03 (Vinculada ao RF03):** O sistema deverá permitir que o usuário filtre as atividades por categoria, exibindo apenas as opções que correspondam aos filtros selecionados.
 
-* **RN04 (Vinculada ao RF04):** O sistema deverá enviar notificações ao usuário sobre novas atividades, alterações de horários, cancelamentos e atualizações relacionadas às suas inscrições.
+* **RN04 (Vinculada ao RF04):** O sistema não deve permitir que uma pessoa se inscreva em uma atividade aonde não tenha vagas disponíveis.
 
-* **RN05 (Vinculada ao RF05):** O sistema deverá permitir que instituições parceiras realizem um cadastro, fornecendo informações como nome da instituição, endereço, telefone, responsável e atividades oferecidas.
+* **RN05 (Vinculada ao RF05):** O sistema deverá permitir que instituições parceiras realizem um cadastro, fornecendo informações como nome da instituição, endereço, telefone e atividades oferecidas,  para atender tudo que o cadastro de atividade precisa.
 
-* **RN06 (Vinculada ao RF06):** O sistema não deve permitir que uma pessoa se inscreva em uma atividade aonde não tenha vagas disponíveis.
 
 ## 4. Cenarios de Teste (Formato Dado-Quando-Entao / BDD)
 *Estes cenarios serao convertidos diretamente em codigo de teste (TDD).*
